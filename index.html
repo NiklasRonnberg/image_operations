@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image operations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="displayCanvas" aria-label="Processed image display"></canvas>
+
+    <section class="file-controls" aria-label="Source image selection">
+      <label class="file-control" for="file1">
+        <span class="file-label">Image 1:</span>
+        <span class="file-name" id="fileName1">1.png</span>
+        <input id="file1" type="file" accept="image/*">
+      </label>
+
+      <label class="file-control" for="file2">
+        <span class="file-label">Image 2:</span>
+        <span class="file-name" id="fileName2">2.png</span>
+        <input id="file2" type="file" accept="image/*">
+      </label>
+
+      <label class="file-control" for="file3">
+        <span class="file-label">Image 3:</span>
+        <span class="file-name" id="fileName3">3.png</span>
+        <input id="file3" type="file" accept="image/*">
+      </label>
+    </section>
+
+    <aside class="right-panel">
+      <nav id="operationButtons" class="operation-buttons" aria-label="Image operations"></nav>
+
+      <section id="formulaPanel" class="formula-panel" aria-live="polite">
+        <h2 id="formulaTitle">No operation selected</h2>
+        <pre id="formulaText">Loading default images...</pre>
+      </section>
+    </aside>
+
+    <div id="emptyMessage" class="empty-message">
+      <strong>Select Image 1, Image 2 and Image 3</strong>
+      <span>Images are scaled to cover the window without stretching.</span>
+    </div>
+
+    <div id="busyIndicator" class="busy-indicator" hidden>Processing...</div>
+  </main>
+
+  <script src="functions.js"></script>
+</body>
+</html>
