@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #121212;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-width: 320px;
+  min-height: 240px;
+  overflow: hidden;
+  background: #121212;
+}
+
+#displayCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #121212;
+}
+
+.file-controls {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.file-control,
+.operation-button,
+.formula-panel {
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 5px;
+  background: rgba(35, 35, 35, 0.82);
+  color: #fff;
+  backdrop-filter: blur(3px);
+}
+
+.file-control {
+  min-width: 0;
+  height: 42px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: background-color 100ms ease;
+}
+
+.file-control:hover,
+.file-control:focus-within,
+.operation-button:not(:disabled):hover,
+.operation-button:not(:disabled):focus-visible {
+  background: rgba(100, 100, 100, 0.9);
+  outline: none;
+}
+
+.file-label {
+  flex: 0 0 auto;
+}
+
+.file-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-control input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.right-panel {
+  position: absolute;
+  z-index: 3;
+  top: 70px;
+  right: 15px;
+  width: 240px;
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.operation-buttons {
+  display: grid;
+  gap: 8px;
+}
+
+.operation-button {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 100ms ease;
+}
+
+.operation-button.selected {
+  background: rgba(40, 140, 230, 0.9);
+}
+
+.operation-button:disabled {
+  border-color: rgba(130, 130, 130, 0.59);
+  background: rgba(25, 25, 25, 0.58);
+  color: #919191;
+  cursor: not-allowed;
+}
+
+.formula-panel {
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.formula-panel h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.formula-panel pre {
+  margin: 0;
+  color: #f2f2f2;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.empty-message {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 280px 24px 24px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.empty-message strong {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+}
+
+.empty-message span {
+  margin-top: 14px;
+  font-size: clamp(13px, 1.6vw, 16px);
+}
+
+.busy-indicator {
+  position: absolute;
+  z-index: 5;
+  left: 16px;
+  bottom: 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  background: rgba(18, 18, 18, 0.9);
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .file-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .file-control {
+    height: 38px;
+  }
+
+  .right-panel {
+    top: 146px;
+    right: 12px;
+    width: min(240px, calc(100vw - 24px));
+    max-height: calc(100vh - 158px);
+  }
+
+  .operation-button {
+    height: 36px;
+  }
+
+  .empty-message {
+    padding: 150px 24px 24px;
+  }
+}
