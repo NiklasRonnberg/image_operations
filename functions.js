@@ -78,7 +78,7 @@ Applied independently to R, G, and B.`,
 Output = zeroPhaseLPF(Image 1)
 
 cutoff = 0.025
-resonance Q = 12.0
+resonance Q = 6.0
 
 Each channel is filtered horizontally and vertically. Each pass runs forward and backward to reduce phase displacement.`,
 
@@ -114,7 +114,7 @@ output = normalized × source brightness`
 const FM_INDEX = 5.0;
 const PHASE_INDEX = 5.0;
 const LPF_CUTOFF = 0.025;
-const LPF_RESONANCE = 12.0;
+const LPF_RESONANCE = 6.0;
 const RESIZE_DEBOUNCE_MS = 180;
 const TWO_PI = Math.PI * 2;
 
