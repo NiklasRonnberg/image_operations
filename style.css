@@ -183,11 +183,80 @@ input {
   font-size: clamp(13px, 1.6vw, 16px);
 }
 
+
+.sound-controls {
+  position: absolute;
+  z-index: 4;
+  left: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.frequency-control,
+.sound-button {
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 5px;
+  background: rgba(35, 35, 35, 0.82);
+  color: #fff;
+  backdrop-filter: blur(3px);
+}
+.frequency-control {
+  min-width: 118px;
+  padding: 7px 9px;
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+}
+.frequency-control select {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 3px;
+  padding: 4px 6px;
+  background: #252525;
+  color: #fff;
+  font: inherit;
+}
+.sound-button {
+  height: 48px;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.sound-button:hover,
+.sound-button:focus-visible {
+  background: rgba(100, 100, 100, 0.9);
+  outline: none;
+}
+.sound-button.playing {
+  background: rgba(40, 140, 230, 0.9);
+}
+
+
+.sound-formula-panel {
+  min-width: 360px;
+  min-height: 48px;
+  max-width: min(520px, calc(100vw - 620px));
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 5px;
+  background: rgba(35, 35, 35, 0.82);
+  color: #fff;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .busy-indicator {
   position: absolute;
   z-index: 5;
   left: 16px;
-  bottom: 16px;
+  bottom: 86px;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 5px;
@@ -196,6 +265,24 @@ input {
 }
 
 @media (max-width: 800px) {
+  .sound-formula-panel {
+    min-width: 300px;
+    max-width: none;
+    flex: 0 0 auto;
+  }
+
+  .sound-controls {
+    right: 12px;
+    bottom: 12px;
+    overflow-x: auto;
+    align-items: flex-end;
+  }
+  .frequency-control {
+    min-width: 104px;
+  }
+  .sound-button {
+    flex: 0 0 auto;
+  }
   .file-controls {
     grid-template-columns: 1fr;
   }

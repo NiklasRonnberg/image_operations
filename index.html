@@ -44,9 +44,25 @@
       <span>Images are scaled to cover the window without stretching.</span>
     </div>
 
+    <section class="sound-controls" aria-label="Sound controls">
+      <label class="frequency-control" for="frequency1">
+        <span>Frequency 1</span>
+        <select id="frequency1" aria-label="Frequency 1"></select>
+      </label>
+      <label class="frequency-control" for="frequency2">
+        <span>Frequency 2</span>
+        <select id="frequency2" aria-label="Frequency 2"></select>
+      </label>
+      <label class="frequency-control" for="frequency3">
+        <span>Frequency 3</span>
+        <select id="frequency3" aria-label="Frequency 3"></select>
+      </label>
+      <button id="playSoundButton" class="sound-button" type="button" aria-pressed="false">Play sound</button>
+    </section>
     <div id="busyIndicator" class="busy-indicator" hidden>Processing...</div>
   </main>
 
   <script src="functions.js"></script>
+  <script src="sound.js"></script>
 </body>
 </html>

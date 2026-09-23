@@ -11,8 +11,8 @@ const BUTTON_LABELS = [
   "Subtraction (1-2)",
   "Multiplication (1*2)",
   "Division (1/2)",
-  "Additive (1 - FM by 2)",
-  "Subtractive (1 - LPF)",
+  "Additive (1 FM by 2)",
+  "Subtractive (1 -> RLPF)",
   "Image 3",
   "Phase mod (3 by 2)",
   "Multiplicative (1*2*3)"
@@ -671,6 +671,9 @@ function updateSelectedImage() {
   state.selectedImage = state.selectedButton >= 0 ? state.results[state.selectedButton] : null;
   document.title = state.selectedButton >= 0 ? BUTTON_LABELS[state.selectedButton] : "Image operations";
   updateFormulaPanel();
+  document.dispatchEvent(new CustomEvent("imageoperationchange", {
+    detail: { selectedButton: state.selectedButton }
+  }));
 }
 
 function updateFormulaPanel() {
