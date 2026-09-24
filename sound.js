@@ -23,15 +23,15 @@ const LPF_RESONANCE_Q = 75.0;
 const PHASE_MODULATION_DEPTH = 2.0;
 
 const SOUND_FORMULAS = [
-  "Image 1\noutput = osc1",
-  "Image 2\noutput = osc2",
+  "Oscillator 1\noutput = osc1",
+  "Oscillator 2\noutput = osc2",
   "Addition (1+2)\noutput = 0.5 × osc1 + 0.5 × osc2",
   "Subtraction (1-2)\noutput = 0.5 × osc1 − 0.5 × osc2",
   "Multiplication (1×2)\noutput = osc1 × osc2",
   "Division (1÷2)\ndenominator = sign(osc2) × max(|osc2|, 0.05)\noutput = tanh(osc1 ÷ denominator) × 0.1",
   "Additive (1 − FM by 2)\ninstantaneous frequency = f1 + osc2 × (f2 × FM index)\nFM index = 10",
   "Subtractive (1 − LPF)\noutput = resonantLPF(osc1)\ncutoff = 220 Hz, Q = 75",
-  "Image 3\noutput = osc3",
+  "Oscillator 3\noutput = osc3",
   "Phase mod (3 by 2)\noutput = sin(phase3 + 0.75 × sin(phase2) × phase depth)\nphase depth = 2",
   "Multiplicative (1×2×3)\noutput = osc1 × osc2 × (PM osc3)"
 ];

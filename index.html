@@ -30,6 +30,11 @@
       </label>
     </section>
 
+    <section class="sonification-controls" aria-label="Image sonification controls">
+      <button id="playSonificationButton" class="sonification-button" type="button" aria-pressed="false">Play sonification</button>
+      <div id="sonificationStatus" class="sonification-status" aria-live="polite">Select an image or operation</div>
+    </section>
+
     <aside class="right-panel">
       <nav id="operationButtons" class="operation-buttons" aria-label="Image operations"></nav>
 
@@ -64,5 +69,6 @@
 
   <script src="functions.js"></script>
   <script src="sound.js"></script>
+  <script src="sonification.js"></script>
 </body>
 </html>

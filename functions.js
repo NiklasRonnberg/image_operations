@@ -724,4 +724,6 @@ function setBusy(busy) {
   busyIndicator.hidden = !busy;
 }
 
+window.getSelectedImageData = function () { return state.selectedImage; };
+
 initialize();

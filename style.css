@@ -306,3 +306,50 @@ input {
     padding: 150px 24px 24px;
   }
 }
+
+
+.sonification-controls { 
+  position:absolute; 
+  z-index:4; 
+  top:70px; 
+  left:12px; 
+  width:190px; 
+  display:grid; 
+  gap:7px; 
+}
+
+.sonification-button,.sonification-status { 
+  border:1px solid rgba(255,255,255,.88); 
+  border-radius:5px; 
+  background:rgba(35,35,35,.82); 
+  color:#fff; 
+  backdrop-filter:blur(3px); 
+}
+
+.sonification-button { 
+  height:42px; 
+  padding:0 14px; 
+  cursor:pointer; 
+  font-size:12px; 
+}
+
+.sonification-button:hover,.sonification-button:focus-visible { 
+  background:rgba(100,100,100,.9); o
+  utline:none; 
+}
+
+.sonification-button.playing { 
+  background:rgba(40,140,230,.9); 
+}
+
+.sonification-status {
+  padding: 7px 9px;
+  font-size: 11px;
+  line-height: 1.35;
+  white-space: pre-line;
+}
+@media (max-width:800px) { 
+  .sonification-controls { 
+    top:146px; width:170px; 
+  } 
+}
